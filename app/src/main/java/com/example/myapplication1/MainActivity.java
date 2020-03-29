@@ -69,6 +69,8 @@ public class MainActivity extends AppCompatActivity  {
                 case R.id.clear:
                     result.setText("");
                     break;
+
+
                 case R.id.dot:
 
 
@@ -79,16 +81,7 @@ public class MainActivity extends AppCompatActivity  {
                         break;
                     }
 
-                case R.id.comma:
 
-
-                    String string2 = (result.getText().toString()).trim();
-                    if (string2.length() > 0) {
-                        result.setText(string2 + " , ");
-
-                        break;
-
-                    }
                     break;
 
             }
@@ -119,10 +112,10 @@ public class MainActivity extends AppCompatActivity  {
                     operation = "/";
                     firstValues = Double.valueOf(result.getText().toString());
                     result.setText(firstValues + "/");
-              //  case R.id.moduloDivision:
-               //     operation = "%";
-               //     firstValues = Double.valueOf(result.getText().toString());
-                //    result.setText(firstValues + "%");
+                case R.id.moduloDivision:
+                   operation = "%";
+                    firstValues = Double.valueOf(result.getText().toString());
+                    result.setText(firstValues + "%");
 
 
                 case R.id.equal:
@@ -151,20 +144,20 @@ public class MainActivity extends AppCompatActivity  {
                             result_op = firstValues / secondValues;
                             result.setText(result_op.toString());
                             operation = "/";
-
-                            //if (operation == "%") {
-                              //  result_op = firstValues % secondValues; не работает
-                               // result.setText(result_op.toString());
-                               // operation = "%";
+                        }
+                          if (operation == "%") {
+                               result_op = firstValues % secondValues;
+                           result.setText(result_op.toString());
+                               operation = "%";
 
 
                                 break;
-                           // }
+                         }
 
 
                         }
                     }
-            }
+
 
 
         }catch(Exception c){
