@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity  {
+public class MainActivity extends AppCompatActivity {
 
     TextView result;
     Double firstValues, secondValues, result_op;
@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity  {
 
                     String string = (result.getText().toString()).trim();
                     if (string.length() > 0) {
-                        result.setText(string + " . ");
+                        result.setText(string + ".");
 
                         break;
                     }
@@ -88,11 +88,13 @@ public class MainActivity extends AppCompatActivity  {
         } catch (Exception e) {
         }
     }
-    public void onOperationClick(View view)  {
+
+    public void onOperationClick(View view) {
         try {
 
 
             switch (view.getId()) {
+
                 case R.id.minus:
                     operation = "-";
                     firstValues = Double.valueOf(result.getText().toString());
@@ -108,70 +110,58 @@ public class MainActivity extends AppCompatActivity  {
                     firstValues = Double.valueOf(result.getText().toString());
                     result.setText(firstValues + "+");
                     break;
-                case R.id.divide:
+                case R.id.moduloDivision:
                     operation = "/";
                     firstValues = Double.valueOf(result.getText().toString());
                     result.setText(firstValues + "/");
-                case R.id.moduloDivision:
-                   operation = "%";
-                    firstValues = Double.valueOf(result.getText().toString());
-                    result.setText(firstValues + "%");
 
 
                 case R.id.equal:
                     if (!operation.equals(null)) {
-                        String two = result.getText().toString().replace(firstValues.toString() + operation, "");
+                        String two = result.getText().toString().replace(firstValues.toString() + operation.toString(), "");
                         secondValues = Double.valueOf(two);
                         if (operation == "+") {
                             result_op = firstValues + secondValues;
                             result.setText(result_op.toString());
                             operation = "+";
-                        }
 
-                        if (operation == "-") {
+
+                        } else if (operation == "-") {
                             result_op = firstValues - secondValues;
                             result.setText(result_op.toString());
                             operation = "-";
-                        }
 
-
-                        if (operation == "*") {
+                        } else if (operation == "*") {
                             result_op = firstValues * secondValues;
                             result.setText(result_op.toString());
                             operation = "*";
-                        }
-                        if (operation == "/") {
+
+
+                        } else if (operation == "/") {
                             result_op = firstValues / secondValues;
                             result.setText(result_op.toString());
                             operation = "/";
                         }
-                          if (operation == "%") {
-                               result_op = firstValues % secondValues;
-                           result.setText(result_op.toString());
-                               operation = "%";
-
-
-                                break;
-                         }
 
 
                         }
-                    }
+                        }
 
 
 
-        }catch(Exception c){
+
+                    throw new IllegalStateException("Unexpected value: " + view.getId());
 
 
-        }
+
+            }catch(Exception c){
+
+
+            }
         }
 
 
     }
-
-
-
-
 
 
 

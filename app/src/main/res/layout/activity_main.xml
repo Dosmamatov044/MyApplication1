@@ -19,19 +19,11 @@
 
 
         <Button
-            android:onClick="onNumberClick"
             android:id="@+id/clear"
             android:layout_width="wrap_content"
             android:layout_height="70dp"
-            android:text="Оч"
-            android:textSize="30sp" />
-
-        <Button
-            android:id="@+id/moduloDivision"
-            android:layout_width="wrap_content"
-            android:layout_height="70dp"
-            android:onClick="onOperationClick"
-            android:text="%"
+            android:onClick="onNumberClick"
+            android:text="очистка"
             android:textSize="30sp" />
 
     </LinearLayout>
@@ -79,36 +71,35 @@
         android:layout_height="wrap_content">
 
         <Button
-            android:onClick="onNumberClick"
             android:id="@+id/four"
             android:layout_width="wrap_content"
             android:layout_height="70dp"
+            android:onClick="onNumberClick"
             android:text="4"
             android:textSize="30sp" />
 
         <Button
-            android:onClick="onNumberClick"
             android:id="@+id/five"
             android:layout_width="wrap_content"
             android:layout_height="70dp"
+            android:onClick="onNumberClick"
             android:text="5"
             android:textSize="30sp" />
 
         <Button
-            android:onClick="onNumberClick"
             android:id="@+id/six"
             android:layout_width="wrap_content"
             android:layout_height="70dp"
+            android:onClick="onNumberClick"
             android:text="6"
             android:textSize="30sp" />
 
         <Button
-            android:id="@+id/divide"
+            android:id="@+id/moduloDivision"
             android:layout_width="wrap_content"
             android:layout_height="70dp"
             android:onClick="onOperationClick"
             android:text="/"
-
             android:textSize="30sp" />
 
 
@@ -191,8 +182,6 @@
             android:textSize="30sp" />
 
     </LinearLayout>
-
-
 
 
 </LinearLayout>
